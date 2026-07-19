@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>App Review Insights</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <header class="top">
+    <div class="brand">App Review Insights</div>
+    <p class="tagline">From App Store reviews to grounded PRDs and test plans</p>
+  </header>
+
+  <main class="shell">
+    <section class="panel start-panel">
+      <h1>Start analysis</h1>
+      <p class="lede">Paste a U.S. App Store link, set an analysis goal, then run the full pipeline.</p>
+
+      <form id="analyze-form">
+        <label>
+          App Store URL (US)
+          <input
+            type="url"
+            name="app_url"
+            id="app_url"
+            placeholder="https://apps.apple.com/us/app/workout-for-women-home-gym/id839285684"
+            value="https://apps.apple.com/us/app/workout-for-women-home-gym/id839285684"
+          />
+        </label>
+
+        <label>
+          Analysis goal / constraint
+          <textarea
+            name="analysis_goal"
+            id="analysis_goal"
+            rows="3"
+            placeholder="e.g. focus on subscription conversion, workout usability, low-rating reviews, or a specific version"
+          ></textarea>
+        </label>
+
+        <label class="file-label">
+          Optional import (JSON / CSV)
+          <input type="file" name="file" id="file" accept=".json,.csv" />
+        </label>
+
+        <label class="check">
+          <input type="checkbox" id="use_sample" />
+          Use labeled sample reviews (offline demo)
+        </label>
+
+        <div class="actions">
+          <button type="submit" class="btn primary" id="start-btn">Start</button>
+          <a class="btn ghost" href="/api/meta/methods" target="_blank" rel="noopener">Methods</a>
+        </div>
+      </form>
+      <p id="form-error" class="error" hidden></p>
+    </section>
+
+    <section class="panel" id="progress-panel" hidden>
+      <h2>Execution progress</h2>
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      <p class="muted" id="progress-text">Waiting…</p>
+      <ol id="stage-list" class="stage-list"></ol>
+    </section>
+
+    <section class="panel" id="result-panel" hidden>
+      <div class="result-head">
+        <h2>Deliverables</h2>
+        <span class="pill" id="status-pill"></span>
+      </div>
+      <div class="meta-row" id="result-meta"></div>
+
+      <nav class="tabs" id="tabs">
+        <button type="button" data-tab="findings" class="active">Findings</button>
+        <button type="button" data-tab="prd">PRD</button>
+        <button type="button" data-tab="tests">Test cases</button>
+        <button type="button" data-tab="classification">Classification</button>
+        <button type="button" data-tab="reviews">Reviews</button>
+        <button type="button" data-tab="validation">Validation</button>
+        <button type="button" data-tab="rawjson">Raw JSON</button>
+      </nav>
+
+      <div class="tab-panels">
+        <div class="tab-panel active" id="tab-findings"></div>
+        <div class="tab-panel" id="tab-prd"></div>
+        <div class="tab-panel" id="tab-tests"></div>
+        <div class="tab-panel" id="tab-classification"></div>
+        <div class="tab-panel" id="tab-reviews"></div>
+        <div class="tab-panel" id="tab-validation"></div>
+        <div class="tab-panel" id="tab-rawjson"><pre id="raw-json"></pre></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

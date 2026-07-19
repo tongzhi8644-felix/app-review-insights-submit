@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Run {{ run_id }} · App Review Insights</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Fraunces:wght@700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <header class="top">
+    <a class="brand" href="/">App Review Insights</a>
+    <p class="tagline">Run #{{ run_id }}</p>
+  </header>
+  <main class="shell">
+    <section class="panel" id="progress-panel">
+      <h2>Execution progress</h2>
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      <p class="muted" id="progress-text">Loading…</p>
+      <ol id="stage-list" class="stage-list"></ol>
+    </section>
+    <section class="panel" id="result-panel" hidden>
+      <div class="result-head">
+        <h2>Deliverables</h2>
+        <span class="pill" id="status-pill"></span>
+      </div>
+      <div class="meta-row" id="result-meta"></div>
+      <nav class="tabs" id="tabs">
+        <button type="button" data-tab="findings" class="active">Findings</button>
+        <button type="button" data-tab="prd">PRD</button>
+        <button type="button" data-tab="tests">Test cases</button>
+        <button type="button" data-tab="classification">Classification</button>
+        <button type="button" data-tab="reviews">Reviews</button>
+        <button type="button" data-tab="validation">Validation</button>
+        <button type="button" data-tab="rawjson">Raw JSON</button>
+      </nav>
+      <div class="tab-panels">
+        <div class="tab-panel active" id="tab-findings"></div>
+        <div class="tab-panel" id="tab-prd"></div>
+        <div class="tab-panel" id="tab-tests"></div>
+        <div class="tab-panel" id="tab-classification"></div>
+        <div class="tab-panel" id="tab-reviews"></div>
+        <div class="tab-panel" id="tab-validation"></div>
+        <div class="tab-panel" id="tab-rawjson"><pre id="raw-json"></pre></div>
+      </div>
+    </section>
+  </main>
+  <script>
+    window.__RUN_ID__ = {{ run_id }};
+  </script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
