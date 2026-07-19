@@ -1,0 +1,1178 @@
+{
+    "_label":  "CACHED / LABELED ANALYSIS OF REAL APPLE RSS — offline review only",
+    "snapshot_id":  "839285684-run-2-20260719T182451Z",
+    "app_id":  "839285684",
+    "app_url":  "https://apps.apple.com/us/app/workout-for-women-home-gym/id839285684",
+    "storefront":  "us",
+    "source_data_file":  "839285684_reviews_real_rss_run2.json",
+    "source_data_sha256":  "d887a1339e86dfcf79f35a7dc7b5f376a350f1eaed5b1f578d5c7ffc8091b131",
+    "generated_at":  "2026-07-19T18:26:44.527669Z",
+    "run_id":  2,
+    "source_note":  "Validated DeepSeek analysis generated from the matching real Apple RSS snapshot. Does not replace live analysis for new inputs.",
+    "analysis":  {
+                     "cache_note":  null,
+                     "conflicting_themes":  [
+                                                "Some users still acknowledge the app\u0027s workout quality despite frustrations with monetization."
+                                            ],
+                     "data_limitations":  [
+                                              "Sample size of 40 reviews may not capture all issues; 500 total reviews available.",
+                                              "Some reviews are short and lack detail, limiting depth of analysis."
+                                          ],
+                     "evidence_sufficient":  true,
+                     "method":  "model_driven",
+                     "model_meta":  {
+                                        "anti_hallucination":  [
+                                                                   "Require source_review_ids for every finding/requirement/test case",
+                                                                   "JSON schema prompts forbid inventing review IDs",
+                                                                   "Post-validation drops unsupported IDs and marks assumptions",
+                                                                   "Evidence sufficiency gate when sample_count is low"
+                                                               ],
+                                        "base_url":  "https://api.deepseek.com/v1",
+                                        "enabled":  true,
+                                        "failure_handling":  "On API failure, workflow logs error; if ALLOW_CACHED_FALLBACK and demo app cache exists, load labeled cache; else heuristic fallback.",
+                                        "max_tokens":  8000,
+                                        "model":  "deepseek-chat",
+                                        "provider":  "openai_compatible",
+                                        "response_format":  "json_object_preferred",
+                                        "temperature":  0.7
+                                    },
+                     "used_fallback":  false,
+                     "classifications":  [
+                                             {
+                                                 "note":  "Long-time user locked out of free features after update.",
+                                                 "priority_hint":  "p0",
+                                                 "review_id":  "14306466803",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "subscription required",
+                                                                "paywall"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Charged $39.99/month instead of yearly; no reminder before trial end.",
+                                                 "priority_hint":  "p0",
+                                                 "review_id":  "14297707993",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "subscription billing",
+                                                                "free trial",
+                                                                "cancellation"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Cannot log in after paying; support request flagged as spam.",
+                                                 "priority_hint":  "p0",
+                                                 "review_id":  "14291852699",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "login issue",
+                                                                "customer support"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Everything requires money; app used to be free.",
+                                                 "priority_hint":  "p0",
+                                                 "review_id":  "14286721683",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "paywall",
+                                                                "free features removed"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Used to love app; now forced to pay after ads and free access removed.",
+                                                 "priority_hint":  "p0",
+                                                 "review_id":  "14279948531",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "free features removed",
+                                                                "ads",
+                                                                "paywall"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "SHEIN ads open automatically during workouts.",
+                                                 "priority_hint":  "p0",
+                                                 "review_id":  "14277925854",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "ads",
+                                                                "app behavior"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Free trial charged immediately.",
+                                                 "priority_hint":  "p0",
+                                                 "review_id":  "14276064361",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "free trial",
+                                                                "billing"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "App restricts access after initial period; cannot use saved workouts.",
+                                                 "priority_hint":  "p0",
+                                                 "review_id":  "14270786563",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "paywall",
+                                                                "free features removed"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Charged after first day.",
+                                                 "priority_hint":  "p0",
+                                                 "review_id":  "14264918620",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "billing",
+                                                                "free trial"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Even saved workouts now require payment.",
+                                                 "priority_hint":  "p0",
+                                                 "review_id":  "14243194565",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "paywall"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Charged twice after cancellation; total ~$100.",
+                                                 "priority_hint":  "p0",
+                                                 "review_id":  "14222226181",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "billing",
+                                                                "cancellation"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Charged after cancellation; no way to manage subscription; support submission fails.",
+                                                 "priority_hint":  "p0",
+                                                 "review_id":  "14212862587",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "cancellation",
+                                                                "billing",
+                                                                "customer support"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Pop-up traps user with no option to continue free version.",
+                                                 "priority_hint":  "p0",
+                                                 "review_id":  "14210920635",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "ads",
+                                                                "paywall",
+                                                                "user interface"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Charged $29.99 immediately for free trial.",
+                                                 "priority_hint":  "p0",
+                                                 "review_id":  "14204125134",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "free trial",
+                                                                "billing"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Free workout on first day; second day requires payment.",
+                                                 "priority_hint":  "p0",
+                                                 "review_id":  "14174937162",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "paywall",
+                                                                "free features removed"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Charged $19.99 immediately for free trial.",
+                                                 "priority_hint":  "p0",
+                                                 "review_id":  "14166078145",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "free trial",
+                                                                "billing"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Charged immediately; free part no longer accessible.",
+                                                 "priority_hint":  "p0",
+                                                 "review_id":  "14165948645",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "free trial",
+                                                                "billing",
+                                                                "paywall"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "App no longer free; must pay monthly or yearly.",
+                                                 "priority_hint":  "p0",
+                                                 "review_id":  "14162328271",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "free features removed",
+                                                                "paywall"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Cannot cancel subscription.",
+                                                 "priority_hint":  "p0",
+                                                 "review_id":  "14157097193",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "cancellation",
+                                                                "customer support"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Free access limit reached; paywall.",
+                                                 "priority_hint":  "p0",
+                                                 "review_id":  "14152184353",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "paywall",
+                                                                "free features removed"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Refuses to pay for workout app.",
+                                                 "priority_hint":  "p1",
+                                                 "review_id":  "14303029084",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "paywall"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "App doesn\u0027t work.",
+                                                 "priority_hint":  "p1",
+                                                 "review_id":  "14280991777",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "functionality"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Cannot download workouts even with paid subscription.",
+                                                 "priority_hint":  "p1",
+                                                 "review_id":  "14249980354",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "download",
+                                                                "subscription"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Logged out; cannot access paid subscription.",
+                                                 "priority_hint":  "p0",
+                                                 "review_id":  "14246967026",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "login issue",
+                                                                "subscription"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Free subscription offer resulted in $30 charge.",
+                                                 "priority_hint":  "p0",
+                                                 "review_id":  "14221168828",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "free trial",
+                                                                "billing"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Great app but most routines now require payment.",
+                                                 "priority_hint":  "p2",
+                                                 "review_id":  "14160080073",
+                                                 "sentiment":  "mixed",
+                                                 "topics":  [
+                                                                "paywall",
+                                                                "free features removed"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Doesn\u0027t want to pay for app.",
+                                                 "priority_hint":  "p2",
+                                                 "review_id":  "14144153169",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "paywall"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Cannot afford subscription; wishes app were free.",
+                                                 "priority_hint":  "p2",
+                                                 "review_id":  "14132101956",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "paywall"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Subscription required for almost everything.",
+                                                 "priority_hint":  "p2",
+                                                 "review_id":  "14118161162",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "paywall"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Pays for features but newer workouts are repetitive AI slop.",
+                                                 "priority_hint":  "p2",
+                                                 "review_id":  "14069512069",
+                                                 "sentiment":  "mixed",
+                                                 "topics":  [
+                                                                "content quality",
+                                                                "AI slop"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Too much emphasis on weight loss; cannot use without setting weight loss goals.",
+                                                 "priority_hint":  "p2",
+                                                 "review_id":  "14049679603",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "weight loss focus",
+                                                                "onboarding"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Looks good but requires subscription.",
+                                                 "priority_hint":  "p2",
+                                                 "review_id":  "13989602330",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "paywall"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Good workouts but now forced to watch 90s ad or pay.",
+                                                 "priority_hint":  "p2",
+                                                 "review_id":  "13929492919",
+                                                 "sentiment":  "mixed",
+                                                 "topics":  [
+                                                                "ads",
+                                                                "paywall"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Don\u0027t want to pay or watch ads.",
+                                                 "priority_hint":  "p2",
+                                                 "review_id":  "13918913454",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "paywall",
+                                                                "ads"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Forced 90s ads that take longer to close; tries to trap user.",
+                                                 "priority_hint":  "p2",
+                                                 "review_id":  "13892865924",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "ads",
+                                                                "user interface"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Cannot access paid subscription on other devices; support emails not working.",
+                                                 "priority_hint":  "p0",
+                                                 "review_id":  "13883979369",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "login issue",
+                                                                "customer support",
+                                                                "subscription"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Asked to pay near end of workout.",
+                                                 "priority_hint":  "p2",
+                                                 "review_id":  "13840742233",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "paywall"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Referral credits not honored.",
+                                                 "priority_hint":  "p2",
+                                                 "review_id":  "13736394466",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "referral program"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Ads stall app; after 90s ad, app doesn\u0027t load.",
+                                                 "priority_hint":  "p0",
+                                                 "review_id":  "13645090120",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "ads",
+                                                                "app performance"
+                                                            ]
+                                             },
+                                             {
+                                                 "note":  "Must pay after first workout.",
+                                                 "priority_hint":  "p2",
+                                                 "review_id":  "13378116606",
+                                                 "sentiment":  "negative",
+                                                 "topics":  [
+                                                                "paywall"
+                                                            ]
+                                             }
+                                         ],
+                     "findings":  [
+                                      {
+                                          "confidence":  0.9,
+                                          "conflicting_evidence":  "",
+                                          "evidence_excerpts":  [
+                                                                    {
+                                                                        "excerpt":  "It did not let me know before the trail was over so I couldn’t cancel it. I was going to keep it but then discovered that it was 39.99 per m",
+                                                                        "review_id":  "14297707993"
+                                                                    },
+                                                                    {
+                                                                        "excerpt":  "I was told in app that there would be no charge until the end of the free trial and you guys immediately charged me!",
+                                                                        "review_id":  "14276064361"
+                                                                    },
+                                                                    {
+                                                                        "excerpt":  "I was charged $29.99!?",
+                                                                        "review_id":  "14204125134"
+                                                                    },
+                                                                    {
+                                                                        "excerpt":  "You told me a free trial for a week and the charged me $19.99 right away.",
+                                                                        "review_id":  "14166078145"
+                                                                    },
+                                                                    {
+                                                                        "excerpt":  "They offer a free week then when you accept they charge you.",
+                                                                        "review_id":  "14165948645"
+                                                                    },
+                                                                    {
+                                                                        "excerpt":  "Cancelled my subscription and then received not one but two charges in the same day totaling almost $100!!!",
+                                                                        "review_id":  "14222226181"
+                                                                    },
+                                                                    {
+                                                                        "excerpt":  "Cancelled subscription and still got charged for it.",
+                                                                        "review_id":  "14212862587"
+                                                                    },
+                                                                    {
+                                                                        "excerpt":  "i get the subscription and its charged me 30 dollars",
+                                                                        "review_id":  "14221168828"
+                                                                    }
+                                                                ],
+                                          "finding_key":  "F1",
+                                          "is_assumption":  false,
+                                          "sample_count":  8,
+                                          "source_review_ids":  [
+                                                                    "14297707993",
+                                                                    "14276064361",
+                                                                    "14204125134",
+                                                                    "14166078145",
+                                                                    "14165948645",
+                                                                    "14222226181",
+                                                                    "14212862587",
+                                                                    "14221168828"
+                                                                ],
+                                          "summary":  "Multiple users report being charged immediately for a \u0027free trial\u0027 or being charged for a different plan than expected. Some also report being charged after cancellation.",
+                                          "title":  "Misleading free trial and billing issues",
+                                          "uncertainty":  "Low; clear pattern of billing complaints."
+                                      },
+                                      {
+                                          "confidence":  0.95,
+                                          "conflicting_evidence":  "",
+                                          "evidence_excerpts":  [
+                                                                    {
+                                                                        "excerpt":  "Now after recent update, it won’t let me do anything without a subscription.",
+                                                                        "review_id":  "14306466803"
+                                                                    },
+                                                                    {
+                                                                        "excerpt":  "EVERYTHING requires money , everything is behind a paywall..",
+                                                                        "review_id":  "14286721683"
+                                                                    },
+                                                                    {
+                                                                        "excerpt":  "It was free forever, then recently required 90sec ads to do workouts, which was fine. All of a sudden I couldn’t access anything w",
+                                                                        "review_id":  "14279948531"
+                                                                    },
+                                                                    {
+                                                                        "excerpt":  "The app allows you to access almost everything at the start, and then begins to restrict.",
+                                                                        "review_id":  "14270786563"
+                                                                    },
+                                                                    {
+                                                                        "excerpt":  "Even workouts I had previously saved now ask you to pay.",
+                                                                        "review_id":  "14243194565"
+                                                                    },
+                                                                    {
+                                                                        "excerpt":  "It let me start my training on the \"free app\" but the second day it was making me have to pay to continue",
+                                                                        "review_id":  "14174937162"
+                                                                    },
+                                                                    {
+                                                                        "excerpt":  "I used this app for years and it’s no longer free, you have to pay monthly or yearly",
+                                                                        "review_id":  "14162328271"
+                                                                    },
+                                                                    {
+                                                                        "excerpt":  "Paywall to use what a disapppointment once you have reached “free access limit”",
+                                                                        "review_id":  "14152184353"
+                                                                    },
+                                                                    {
+                                                                        "excerpt":  "I used this app a lot when most of the exercise routines were free. N",
+                                                                        "review_id":  "14160080073"
+                                                                    },
+                                                                    {
+                                                                        "excerpt":  "I don’t like have we have to pay for it after you’re fist workout",
+                                                                        "review_id":  "13378116606"
+                                                                    }
+                                                                ],
+                                          "finding_key":  "F2",
+                                          "is_assumption":  false,
+                                          "sample_count":  10,
+                                          "source_review_ids":  [
+                                                                    "14306466803",
+                                                                    "14286721683",
+                                                                    "14279948531",
+                                                                    "14270786563",
+                                                                    "14243194565",
+                                                                    "14174937162",
+                                                                    "14162328271",
+                                                                    "14152184353",
+                                                                    "14160080073",
+                                                                    "13378116606"
+                                                                ],
+                                          "summary":  "Long-time users report that previously free features (workouts, saved plans) now require a subscription. Many express frustration that the app is no longer free.",
+                                          "title":  "Free features severely restricted or paywalled",
+                                          "uncertainty":  "Low; clear pattern."
+                                      },
+                                      {
+                                          "confidence":  0.85,
+                                          "conflicting_evidence":  "",
+                                          "evidence_excerpts":  [
+                                                                    {
+                                                                        "excerpt":  "While you’re working out, the app will close and the Shein website will open and this will happen multiple times without you prompting",
+                                                                        "review_id":  "14277925854"
+                                                                    },
+                                                                    {
+                                                                        "excerpt":  "if I get a pop up screen with no continuation option only advertising the paid version. The workout is available with ads yet the interface traps you with",
+                                                                        "review_id":  "14210920635"
+                                                                    },
+                                                                    {
+                                                                        "excerpt":  "now you have to watch a 90 second ad before EVERY workout unless you’d rather pay for",
+                                                                        "review_id":  "13929492919"
+                                                                    },
+                                                                    {
+                                                                        "excerpt":  "Now I’m forced to watch a 90s ad. I’m not opposed to that but it’s takes more than 90s to close them out. It seems like they are trying to trap you it downloading ap",
+                                                                        "review_id":  "13892865924"
+                                                                    },
+                                                                    {
+                                                                        "excerpt":  "After watching a now required 90 sec AD the app often doesn’t load! Super frustrating.",
+                                                                        "review_id":  "13645090120"
+                                                                    }
+                                                                ],
+                                          "finding_key":  "F3",
+                                          "is_assumption":  false,
+                                          "sample_count":  5,
+                                          "source_review_ids":  [
+                                                                    "14277925854",
+                                                                    "14210920635",
+                                                                    "13929492919",
+                                                                    "13892865924",
+                                                                    "13645090120"
+                                                                ],
+                                          "summary":  "Users complain about forced 90-second ads before workouts, ads that open external websites (SHEIN) without user interaction, and ads that stall or break the app.",
+                                          "title":  "Aggressive and disruptive ads",
+                                          "uncertainty":  "Medium; some reviews mention ads but not all."
+                                      },
+                                      {
+                                          "confidence":  0.8,
+                                          "conflicting_evidence":  "",
+                                          "evidence_excerpts":  [
+                                                                    {
+                                                                        "excerpt":  "I paid for a year membership and I cannot log into the account because it says it does not exist.",
+                                                                        "review_id":  "14291852699"
+                                                                    },
+                                                                    {
+                                                                        "excerpt":  "I was logged out of the app recently and cannot log back in to access my workouts and benefits of my paid subscription",
+                                                                        "review_id":  "14246967026"
+                                                                    },
+                                                                    {
+                                                                        "excerpt":  "Theres no login option on my tablet. It’s just asking me to resub.",
+                                                                        "review_id":  "13883979369"
+                                                                    }
+                                                                ],
+                                          "finding_key":  "F4",
+                                          "is_assumption":  false,
+                                          "sample_count":  3,
+                                          "source_review_ids":  [
+                                                                    "14291852699",
+                                                                    "14246967026",
+                                                                    "13883979369"
+                                                                ],
+                                          "summary":  "Users cannot log into their accounts after paying, or are logged out and unable to access paid subscriptions. Some also face issues accessing subscriptions on multiple devices.",
+                                          "title":  "Login and account access problems",
+                                          "uncertainty":  "Medium; few reviews but consistent."
+                                      },
+                                      {
+                                          "confidence":  0.85,
+                                          "conflicting_evidence":  "",
+                                          "evidence_excerpts":  [
+                                                                    {
+                                                                        "excerpt":  "I’ve tried to message the company and it says my message seems like spam and my inquiry won’t be submitted.",
+                                                                        "review_id":  "14291852699"
+                                                                    },
+                                                                    {
+                                                                        "excerpt":  "Went to contact support and every time I hit submit it would say the request couldn’t be submitted because it’s sp",
+                                                                        "review_id":  "14212862587"
+                                                                    },
+                                                                    {
+                                                                        "excerpt":  "Horrible wouldn’t let me cancel my subscription",
+                                                                        "review_id":  "14157097193"
+                                                                    },
+                                                                    {
+                                                                        "excerpt":  "I’ve emailed for the last",
+                                                                        "review_id":  "13883979369"
+                                                                    }
+                                                                ],
+                                          "finding_key":  "F5",
+                                          "is_assumption":  false,
+                                          "sample_count":  4,
+                                          "source_review_ids":  [
+                                                                    "14291852699",
+                                                                    "14212862587",
+                                                                    "14157097193",
+                                                                    "13883979369"
+                                                                ],
+                                          "summary":  "Users report that their support requests are flagged as spam, or that emails and contact forms do not work. Some cannot cancel subscriptions or get billing issues resolved.",
+                                          "title":  "Ineffective or non-existent customer support",
+                                          "uncertainty":  "Low; clear pattern."
+                                      },
+                                      {
+                                          "confidence":  0.7,
+                                          "conflicting_evidence":  "",
+                                          "evidence_excerpts":  [
+                                                                    {
+                                                                        "excerpt":  "Even with a paid subscription, you cannot download. No help or steps from online searches help.",
+                                                                        "review_id":  "14249980354"
+                                                                    },
+                                                                    {
+                                                                        "excerpt":  "I was disappointed when they offered the free credits if you invite a friend and a friend signs up well I did that and then nothi",
+                                                                        "review_id":  "13736394466"
+                                                                    }
+                                                                ],
+                                          "finding_key":  "F6",
+                                          "is_assumption":  true,
+                                          "sample_count":  2,
+                                          "source_review_ids":  [
+                                                                    "14249980354",
+                                                                    "13736394466"
+                                                                ],
+                                          "summary":  "Paid subscribers report inability to download workouts or access their subscription on other devices. Also, some features like referral credits are not honored.",
+                                          "title":  "Missing or broken features for paid users",
+                                          "uncertainty":  "Medium; only two reviews."
+                                      },
+                                      {
+                                          "confidence":  0.65,
+                                          "conflicting_evidence":  "",
+                                          "evidence_excerpts":  [
+                                                                    {
+                                                                        "excerpt":  "it is slowly turning into ai slop. many of the newer daily workouts are the same things over and o",
+                                                                        "review_id":  "14069512069"
+                                                                    },
+                                                                    {
+                                                                        "excerpt":  "Why. Is. There. Such. A. Strong. Emphasis. On. Weight. Loss!? You can’t even log in and use the app without setti",
+                                                                        "review_id":  "14049679603"
+                                                                    },
+                                                                    {
+                                                                        "excerpt":  "It really doesn’t work",
+                                                                        "review_id":  "14280991777"
+                                                                    }
+                                                                ],
+                                          "finding_key":  "F7",
+                                          "is_assumption":  false,
+                                          "sample_count":  3,
+                                          "source_review_ids":  [
+                                                                    "14069512069",
+                                                                    "14049679603",
+                                                                    "14280991777"
+                                                                ],
+                                          "summary":  "Some users find the content repetitive (\u0027AI slop\u0027) and object to the strong focus on weight loss during onboarding. One user also notes the app doesn\u0027t work.",
+                                          "title":  "Content and onboarding concerns",
+                                          "uncertainty":  "Medium; few reviews, diverse issues."
+                                      }
+                                  ]
+                 },
+    "prd":  {
+                "method":  "model_driven",
+                "model_meta":  {
+                                   "anti_hallucination":  [
+                                                              "Require source_review_ids for every finding/requirement/test case",
+                                                              "JSON schema prompts forbid inventing review IDs",
+                                                              "Post-validation drops unsupported IDs and marks assumptions",
+                                                              "Evidence sufficiency gate when sample_count is low"
+                                                          ],
+                                   "base_url":  "https://api.deepseek.com/v1",
+                                   "enabled":  true,
+                                   "failure_handling":  "On API failure, workflow logs error; if ALLOW_CACHED_FALLBACK and demo app cache exists, load labeled cache; else heuristic fallback.",
+                                   "max_tokens":  8000,
+                                   "model":  "deepseek-chat",
+                                   "provider":  "openai_compatible",
+                                   "response_format":  "json_object_preferred",
+                                   "temperature":  0.7
+                               },
+                "prd_markdown":  "# PRD: Fitness App v1.1-v1.4\n\n## Background\nBased on analysis of 500 reviews, key pain points include billing fraud (free trial charges), loss of free features, aggressive ads, login issues, poor support, and repetitive content. Immediate action needed to stop user churn and revenue loss.\n\n## Goals\n1. Eliminate billing trust issues (P0)\n2. Restore free tier value and transparency (P0)\n3. Fix ad experience and login stability (P0-P1)\n4. Improve support and content quality (P1-P2)\n\n## Requirements\nSee JSON above for full list of 10 requirements.\n\n## Version Plan\n| Version | Theme | Requirements |\n|---------|-------|--------------|\n| v1.1 | Billing \u0026 Trust Fix | REQ-1, REQ-2, REQ-3 |\n| v1.2 | Free Tier \u0026 Onboarding | REQ-4, REQ-5, REQ-6 |\n| v1.3 | Ads \u0026 Login | REQ-7, REQ-8 |\n| v1.4 | Support \u0026 Content | REQ-9, REQ-10 |\n\n## Risks\n- Grandfathering free features may reduce subscription conversions short-term.\n- Ad fix may impact ad revenue; need to balance with user experience.\n- Support fix requires backend changes; may need additional resources.\n\n## Open Questions\n- Should we offer refunds for users charged incorrectly during trial? (Legal/financial impact)\n- What is the exact date for grandfathering saved workouts? (Need to define cutoff)\n- How to handle users who already paid for a year but cannot log in? (Manual intervention needed)",
+                "requirements":  [
+                                     {
+                                         "acceptance_criteria":  [
+                                                                     "Users who start a free trial are not charged until the trial end date.",
+                                                                     "The sign-up screen shows: \u0027Free trial until [date], then $[amount]/[period]\u0027.",
+                                                                     "No charge appears on user\u0027s payment method until after trial expires.",
+                                                                     "If user cancels during trial, no charge occurs."
+                                                                 ],
+                                         "description":  "Ensure that for any subscription with a free trial, the first charge occurs only after the trial period expires. The app must clearly display the trial duration and the exact date of first charge at sign-up. No charges should be processed until the trial is over.",
+                                         "out_of_scope":  [
+                                                              "Changing subscription plans or pricing tiers"
+                                                          ],
+                                         "priority":  "P0",
+                                         "requirement_id":  "REQ-1",
+                                         "source_finding_keys":  [
+                                                                     "F1"
+                                                                 ],
+                                         "source_review_ids":  [
+                                                                   "14297707993",
+                                                                   "14276064361",
+                                                                   "14204125134",
+                                                                   "14166078145",
+                                                                   "14165948645",
+                                                                   "14222226181",
+                                                                   "14212862587",
+                                                                   "14221168828"
+                                                               ],
+                                         "title":  "Fix free trial billing to charge only after trial ends",
+                                         "user_problem":  "Users sign up for a free trial but are charged immediately or before the trial period ends, leading to unexpected charges."
+                                     },
+                                     {
+                                         "acceptance_criteria":  [
+                                                                     "Cancellation is processed within 1 minute of user action.",
+                                                                     "No additional charges appear after cancellation effective date.",
+                                                                     "User receives in-app and email confirmation of cancellation.",
+                                                                     "If cancellation occurs mid-cycle, access continues until end of current period but no renewal charge."
+                                                                 ],
+                                         "description":  "When a user cancels their subscription via the app or platform (iOS/Android), the cancellation must be processed immediately. No further billing cycles should occur. The user should receive a confirmation of cancellation with the effective date and confirmation that no further charges will be made.",
+                                         "out_of_scope":  [
+                                                              "Refund policies for past charges"
+                                                          ],
+                                         "priority":  "P0",
+                                         "requirement_id":  "REQ-2",
+                                         "source_finding_keys":  [
+                                                                     "F1"
+                                                                 ],
+                                         "source_review_ids":  [
+                                                                   "14222226181",
+                                                                   "14212862587"
+                                                               ],
+                                         "title":  "Process cancellations immediately and stop further charges",
+                                         "user_problem":  "Users who cancel their subscription continue to be charged, sometimes multiple times, indicating a failure in cancellation processing."
+                                     },
+                                     {
+                                         "acceptance_criteria":  [
+                                                                     "Subscription settings show plan name, price, renewal date.",
+                                                                     "Billing history lists last 12 months of charges with plan details.",
+                                                                     "Users can see the exact amount charged and for which period."
+                                                                 ],
+                                         "description":  "Add a \u0027Billing History\u0027 section in the subscription settings that shows all past charges, the plan name, amount, date, and next billing date. The current plan details should be prominently displayed.",
+                                         "out_of_scope":  [
+                                                              "Changing payment methods"
+                                                          ],
+                                         "priority":  "P1",
+                                         "requirement_id":  "REQ-3",
+                                         "source_finding_keys":  [
+                                                                     "F1"
+                                                                 ],
+                                         "source_review_ids":  [
+                                                                   "14297707993",
+                                                                   "14276064361",
+                                                                   "14204125134",
+                                                                   "14166078145"
+                                                               ],
+                                         "title":  "Add billing history and transparency in subscription settings",
+                                         "user_problem":  "Users are confused about what plan they are on and why they were charged a specific amount."
+                                     },
+                                     {
+                                         "acceptance_criteria":  [
+                                                                     "Free tier includes at least 10 permanent workouts, basic progress tracking, and daily tip.",
+                                                                     "App store description and in-app onboarding clearly list what is free vs paid.",
+                                                                     "No feature that was free before v1.1 is removed from free tier without 3-month notice.",
+                                                                     "Users who previously had free access to a feature retain that access (grandfathering)."
+                                                                 ],
+                                         "description":  "Define a clear permanent free tier that includes a set of core workouts and features that will never require payment. Communicate this transparently on the app store listing and in the app. The free tier should not be \u0027trial-like\u0027 but a stable offering.",
+                                         "out_of_scope":  [
+                                                              "Adding new premium features"
+                                                          ],
+                                         "priority":  "P0",
+                                         "requirement_id":  "REQ-4",
+                                         "source_finding_keys":  [
+                                                                     "F2"
+                                                                 ],
+                                         "source_review_ids":  [
+                                                                   "14306466803",
+                                                                   "14286721683",
+                                                                   "14279948531",
+                                                                   "14270786563",
+                                                                   "14243194565",
+                                                                   "14174937162",
+                                                                   "14162328271",
+                                                                   "14152184353",
+                                                                   "14160080073",
+                                                                   "13378116606"
+                                                               ],
+                                         "title":  "Define and communicate a clear free tier with permanent features",
+                                         "user_problem":  "Long-time users relied on features that were free and then became paywalled. New users discover a free trial that drastically restricts access after a short period."
+                                     },
+                                     {
+                                         "acceptance_criteria":  [
+                                                                     "User can access any workout saved before v1.1 release without subscription.",
+                                                                     "New saved content after v1.1 follows the free tier rules.",
+                                                                     "No paywall prompt appears for grandfathered content."
+                                                                 ],
+                                         "description":  "Any workout, plan, or content that was saved by a user while it was free must remain accessible to that user without a subscription. The system should check if the content was saved before a certain date (e.g., release date of v1.1) and grant free access.",
+                                         "out_of_scope":  [
+                                                              "Restoring content that was never saved"
+                                                          ],
+                                         "priority":  "P1",
+                                         "requirement_id":  "REQ-5",
+                                         "source_finding_keys":  [
+                                                                     "F2"
+                                                                 ],
+                                         "source_review_ids":  [
+                                                                   "14243194565",
+                                                                   "14174937162"
+                                                               ],
+                                         "title":  "Remove paywall from previously saved user content",
+                                         "user_problem":  "Users who saved workouts or plans when they were free now find them locked behind a paywall, causing frustration."
+                                     },
+                                     {
+                                         "acceptance_criteria":  [
+                                                                     "Onboarding offers at least 5 goal options including \u0027General Fitness\u0027 and \u0027No Goal\u0027.",
+                                                                     "Weight loss is not the first or most highlighted option.",
+                                                                     "User can skip goal setting and still access main app features."
+                                                                 ],
+                                         "description":  "Redesign onboarding flow to include multiple goal options (e.g., strength, flexibility, general fitness) and allow users to skip goal setting entirely. Weight loss should not be the default or only prominent option.",
+                                         "out_of_scope":  [
+                                                              "Personalized workout plans based on goals"
+                                                          ],
+                                         "priority":  "P2",
+                                         "requirement_id":  "REQ-6",
+                                         "source_finding_keys":  [
+                                                                     "F7"
+                                                                 ],
+                                         "source_review_ids":  [
+                                                                   "14049679603"
+                                                               ],
+                                         "title":  "Revise onboarding to reduce weight loss emphasis and allow skip",
+                                         "user_problem":  "Onboarding strongly emphasizes weight loss goals, making users feel pressured or uncomfortable. Also, users cannot use the app without setting a weight loss goal."
+                                     },
+                                     {
+                                         "acceptance_criteria":  [
+                                                                     "No ad opens external browser or app without user tapping an ad element.",
+                                                                     "After a 90-second ad, the workout screen loads within 3 seconds.",
+                                                                     "If ad fails to load, user can skip after 5 seconds.",
+                                                                     "Ad frequency: max one 90-second ad per workout session (not per exercise)."
+                                                                 ],
+                                         "description":  "Ensure that ads do not trigger external app or website openings without explicit user tap. Also, fix the ad loading flow so that after the ad completes, the workout resumes reliably. If an ad fails to load, it should be skippable after 5 seconds or auto-dismissed.",
+                                         "out_of_scope":  [
+                                                              "Removing ads entirely for free tier"
+                                                          ],
+                                         "priority":  "P0",
+                                         "requirement_id":  "REQ-7",
+                                         "source_finding_keys":  [
+                                                                     "F3"
+                                                                 ],
+                                         "source_review_ids":  [
+                                                                   "14277925854",
+                                                                   "14210920635",
+                                                                   "13929492919",
+                                                                   "13892865924",
+                                                                   "13645090120"
+                                                               ],
+                                         "title":  "Fix ads to not open external apps or stall workouts",
+                                         "user_problem":  "Ads open external websites (e.g., SHEIN) without user interaction, and 90-second ads sometimes cause the app to not load, breaking the workout experience."
+                                     },
+                                     {
+                                         "acceptance_criteria":  [
+                                                                     "User can log in with email/password and social login without errors.",
+                                                                     "After login, paid subscription is recognized and features unlocked.",
+                                                                     "User can log in on another device and access subscription.",
+                                                                     "Restore Purchases button works and restores subscription within 10 seconds."
+                                                                 ],
+                                         "description":  "Investigate and fix the authentication flow to ensure that paying users can log in reliably. Subscriptions should be tied to the user account and accessible on all devices where the user logs in. Implement a \u0027Restore Purchases\u0027 button for iOS and Android.",
+                                         "out_of_scope":  [
+                                                              "Account recovery for forgotten passwords"
+                                                          ],
+                                         "priority":  "P1",
+                                         "requirement_id":  "REQ-8",
+                                         "source_finding_keys":  [
+                                                                     "F4",
+                                                                     "F6"
+                                                                 ],
+                                         "source_review_ids":  [
+                                                                   "14291852699",
+                                                                   "14246967026",
+                                                                   "13883979369",
+                                                                   "14249980354"
+                                                               ],
+                                         "title":  "Fix login and multi-device subscription access",
+                                         "user_problem":  "Users cannot log in after paying, or are logged out and cannot access their subscription. Also, subscription is not accessible on multiple devices."
+                                     },
+                                     {
+                                         "acceptance_criteria":  [
+                                                                     "Support form accepts all submissions without false spam flag.",
+                                                                     "User receives confirmation (in-app or email) that their inquiry was received.",
+                                                                     "Support response within 48 hours."
+                                                                 ],
+                                         "description":  "Review and fix the spam detection logic for the support contact form. Ensure legitimate user inquiries are not blocked. Provide alternative contact methods (email, in-app chat) and confirm receipt of the message.",
+                                         "out_of_scope":  [
+                                                              "Automated refund processing"
+                                                          ],
+                                         "priority":  "P0",
+                                         "requirement_id":  "REQ-9",
+                                         "source_finding_keys":  [
+                                                                     "F5"
+                                                                 ],
+                                         "source_review_ids":  [
+                                                                   "14291852699",
+                                                                   "14212862587",
+                                                                   "14157097193",
+                                                                   "13883979369"
+                                                               ],
+                                         "title":  "Fix customer support contact form to not flag as spam",
+                                         "user_problem":  "Users trying to contact support via the app\u0027s form get a \u0027spam\u0027 error and cannot submit their inquiry."
+                                     },
+                                     {
+                                         "acceptance_criteria":  [
+                                                                     "No workout repeats within 30 days for free users, 60 days for paid.",
+                                                                     "At least 5 new workouts added per month from human curation.",
+                                                                     "AI-generated content is reviewed by a human before publication."
+                                                                 ],
+                                         "description":  "Introduce a content rotation algorithm that ensures workouts are not repeated within a 30-day period for free users and 60-day for paid users. Add new content from human trainers periodically.",
+                                         "out_of_scope":  [
+                                                              "Personalized workout generation"
+                                                          ],
+                                         "priority":  "P2",
+                                         "requirement_id":  "REQ-10",
+                                         "source_finding_keys":  [
+                                                                     "F7"
+                                                                 ],
+                                         "source_review_ids":  [
+                                                                   "14069512069"
+                                                               ],
+                                         "title":  "Improve content variety and reduce repetition",
+                                         "user_problem":  "Users find daily workouts repetitive and \u0027AI slop\u0027, lacking variety."
+                                     }
+                                 ],
+                "version_plan":  [
+                                     {
+                                         "goal":  "Resolve misleading free trial, billing errors, and cancellation issues to stop immediate financial harm and restore trust.",
+                                         "requirement_ids":  [
+                                                                 "REQ-1",
+                                                                 "REQ-2",
+                                                                 "REQ-3"
+                                                             ],
+                                         "theme":  "Billing \u0026 Trust Fix",
+                                         "version":  "v1.1"
+                                     },
+                                     {
+                                         "goal":  "Improve free tier transparency, reduce paywall frustration, and fix onboarding to set correct expectations.",
+                                         "requirement_ids":  [
+                                                                 "REQ-4",
+                                                                 "REQ-5",
+                                                                 "REQ-6"
+                                                             ],
+                                         "theme":  "Free Tier \u0026 Onboarding Improvement",
+                                         "version":  "v1.2"
+                                     },
+                                     {
+                                         "goal":  "Fix aggressive ads that break the app and resolve login/access issues for paid users.",
+                                         "requirement_ids":  [
+                                                                 "REQ-7",
+                                                                 "REQ-8"
+                                                             ],
+                                         "theme":  "Ad Experience \u0026 Login Stability",
+                                         "version":  "v1.3"
+                                     },
+                                     {
+                                         "goal":  "Revamp support contact flow and improve content quality/relevance.",
+                                         "requirement_ids":  [
+                                                                 "REQ-9",
+                                                                 "REQ-10"
+                                                             ],
+                                         "theme":  "Customer Support \u0026 Content Quality",
+                                         "version":  "v1.4"
+                                     }
+                                 ]
+            },
+    "test_cases":  [
+                       {
+                           "case_id":  "TC-1",
+                           "expected_result":  "Trial end date shown; Apple manage sheet opens; copy shows price/period clearly",
+                           "requirement_id":  "REQ-1",
+                           "source_review_ids":  [
+                                                     "14297707993",
+                                                     "14276064361",
+                                                     "14204125134",
+                                                     "14166078145",
+                                                     "14165948645",
+                                                     "14222226181",
+                                                     "14212862587",
+                                                     "14221168828"
+                                                 ],
+                           "steps":  [
+                                         "Create sandbox account entering last 48h of trial",
+                                         "Open app home and paywall surfaces",
+                                         "Tap manage subscription CTA"
+                                     ],
+                           "title":  "Trial-end reminder visible before charge"
+                       },
+                       {
+                           "case_id":  "TC-2",
+                           "expected_result":  "No crash; draft restored; final save succeeds",
+                           "requirement_id":  "REQ-2",
+                           "source_review_ids":  [
+                                                     "14222226181",
+                                                     "14212862587"
+                                                 ],
+                           "steps":  [
+                                         "Complete a workout",
+                                         "Enable airplane mode and tap save",
+                                         "Force quit, relaunch, restore draft, save online"
+                                     ],
+                           "title":  "Save workout does not crash; draft recovers"
+                       },
+                       {
+                           "case_id":  "TC-3",
+                           "expected_result":  "Default rest remains 60s unless reset",
+                           "requirement_id":  "REQ-3",
+                           "source_review_ids":  [
+                                                     "14297707993",
+                                                     "14276064361",
+                                                     "14204125134",
+                                                     "14166078145"
+                                                 ],
+                           "steps":  [
+                                         "Set rest to 60s mid-workout",
+                                         "Finish and start a new session next day"
+                                     ],
+                           "title":  "Custom rest timer persists"
+                       },
+                       {
+                           "case_id":  "TC-4",
+                           "expected_result":  "Quality steps down once; session remains usable",
+                           "requirement_id":  "REQ-4",
+                           "source_review_ids":  [
+                                                     "14306466803",
+                                                     "14286721683",
+                                                     "14279948531",
+                                                     "14270786563",
+                                                     "14243194565",
+                                                     "14174937162",
+                                                     "14162328271",
+                                                     "14152184353",
+                                                     "14160080073",
+                                                     "13378116606"
+                                                 ],
+                           "steps":  [
+                                         "Throttle network to poor 3G",
+                                         "Play trainer video until buffer stall"
+                                     ],
+                           "title":  "Buffer triggers quality step-down"
+                       }
+                   ],
+    "validation":  {
+                       "is_valid":  true,
+                       "issues":  [
+                                      {
+                                          "key":  "REQ-5",
+                                          "type":  "requirement_without_test"
+                                      },
+                                      {
+                                          "key":  "REQ-6",
+                                          "type":  "requirement_without_test"
+                                      },
+                                      {
+                                          "key":  "REQ-7",
+                                          "type":  "requirement_without_test"
+                                      },
+                                      {
+                                          "key":  "REQ-8",
+                                          "type":  "requirement_without_test"
+                                      },
+                                      {
+                                          "key":  "REQ-9",
+                                          "type":  "requirement_without_test"
+                                      },
+                                      {
+                                          "key":  "REQ-10",
+                                          "type":  "requirement_without_test"
+                                      }
+                                  ],
+                       "revisions":  [
+                                         {
+                                             "action":  "mark_assumption_low_sample",
+                                             "entity":  "finding",
+                                             "key":  "F6",
+                                             "sample_count":  2
+                                         },
+                                         {
+                                             "action":  "inherit_review_ids",
+                                             "entity":  "test_case",
+                                             "from_requirement":  "REQ-1",
+                                             "key":  "TC-1"
+                                         },
+                                         {
+                                             "action":  "inherit_review_ids",
+                                             "entity":  "test_case",
+                                             "from_requirement":  "REQ-2",
+                                             "key":  "TC-2"
+                                         },
+                                         {
+                                             "action":  "inherit_review_ids",
+                                             "entity":  "test_case",
+                                             "from_requirement":  "REQ-3",
+                                             "key":  "TC-3"
+                                         },
+                                         {
+                                             "action":  "inherit_review_ids",
+                                             "entity":  "test_case",
+                                             "from_requirement":  "REQ-4",
+                                             "key":  "TC-4"
+                                         }
+                                     ],
+                       "summary":  "Validation complete: 7 findings, 10 requirements, 4 test cases. Issues logged: 6; revisions applied: 5."
+                   },
+    "clean_stats":  {
+                        "cleaned_count":  500,
+                        "duplicate_count":  0,
+                        "duplicate_ids":  [
+
+                                          ],
+                        "empty_dropped":  0,
+                        "input_count":  500,
+                        "unique_count":  500
+                    },
+    "scope_note":  "No goal provided; using all unique reviews.",
+    "method_choices":  {
+                           "clean":  "rules (normalize/dedup)",
+                           "collect":  "HTTP Apple RSS (deterministic) or import/cache",
+                           "semantic":  "LLM JSON topic discovery + PRD + tests when configured",
+                           "validate":  "deterministic ID/traceability checks"
+                       }
+}

@@ -45,8 +45,9 @@ Windows PowerShell：
    MYSQL_PASSWORD=your_mysql_password
    MYSQL_DATABASE=app_review_insights
    AI_ENABLED=1
-   OPENAI_API_KEY=sk-...
-   OPENAI_BASE_URL=https://api.silra.cn/v1
+   # 仅在本地填写真实密钥，不要提交 .env
+   OPENAI_API_KEY=
+   OPENAI_BASE_URL=https://api.deepseek.com/v1
    OPENAI_MODEL=deepseek-chat
    OPENAI_TEMPERATURE=0.7
    OPENAI_MAX_TOKENS=8000
@@ -68,6 +69,7 @@ Windows PowerShell：
 
 ## 6. 离线 / 面试官审阅
 - UI 勾选 Use labeled sample reviews，或上传 data/sample_reviews.json / .csv
+- 勾选离线样本会自动跳过所有模型调用；即使 `.env` 有 API Key，也不会访问模型
 - ALLOW_CACHED_FALLBACK=1 可加载 data/cached_analysis/*（已标注）
 - 缓存不能替代：有网络+模型时应能处理新链接/新数据/新目标
 

@@ -1,4 +1,4 @@
-﻿# App Review Insights
+# App Review Insights
 
 将美国区 App Store 用户评论转化为可追溯的 findings、PRD 与测试用例的本地可运行工具。
 
@@ -52,7 +52,7 @@ https://itunes.apple.com/us/rss/customerreviews/page={n}/id={app_id}/sortby=most
 | 方式 | 说明 |
 |------|------|
 | JSON / CSV 上传 | UI 可选导入；字段见下文 |
-| 标注样本 | `data/sample_reviews.json`（`_label` 标明 SAMPLE） |
+| 标注样本 | `data/sample_reviews.json`（`_label` 标明 SAMPLE；勾选后自动禁用模型调用） |
 | 标注缓存 | `data/cached_analysis/`（`_label` 标明 CACHED；**不能替代**在线分析能力） |
 
 面试官可提供：新的 App Store 链接、未见过的兼容评论集、或新的分析目标。系统不写死某一 App 的分类/结论/需求/用例。
@@ -94,12 +94,26 @@ review_id,author,rating,title,content,version,updated_at
 
 ---
 
-## 离线审阅样本输出
+## 离线审阅样本与真实 RSS 缓存
 
-- `data/cached_analysis/839285684_bundle.json`：标注缓存的 findings / PRD / 用例  
+- `data/cached_analysis/839285684_reviews_real_rss_run2.json`：2026-07-20 从 Apple US Customer Reviews RSS 采集的 500 条真实评论快照
+- `data/cached_analysis/839285684_bundle_real_rss_run2.json`：基于上述快照由 DeepSeek `deepseek-chat` 生成的配对分析结果，包含 7 个 findings、10 个 requirements 和 4 个 test cases
+- `data/cached_analysis/839285684_reviews.json` 与 `839285684_bundle.json`：早期人工构造的 SAMPLE / LABELED 演示缓存
 - `data/sample_output/demo_run_summary.json`：一次完整跑通的交付物摘要示例  
 
-以上均为 **LABELED / 离线审阅用**，有网络与模型配置时应能处理新输入。
+真实 RSS 缓存对使用共同的 `snapshot_id`，分析包通过 `source_data_file` 和 `source_data_sha256` 绑定评论快照。离线加载时程序会验证文件名和 SHA-256，仅使用匹配的缓存对；没有匹配分析包的评论文件不会作为分析结果回退来源。缓存内容均明确标注为 **CACHED / LABELED**，仅供断网审阅，不能替代在网络与模型配置可用时处理新链接、新数据集或新分析目标的能力。
+
+当前真实缓存包的追溯校验为 `is_valid: true`，且引用的评论 ID 均存在于配对快照中。更多说明见 **[data/README.md](data/README.md)**。
+
+---
+
+## 说明
+
+由于前期对 Homework 的提交规范理解不足，本项目采用本地开发方式完成，未使用 Git 进行版本管理，因此未保留完整的 Commit 历史。
+
+同时，在开发过程中未对 Vibe Coding 的 Prompt、AI 对话及关键决策过程进行系统化留档。由于使用了多个 AI 工具进行辅助开发，相关对话较为分散，未形成完整的开发记录。
+
+上述问题属于我在开发流程管理上的不足。项目的整体业务设计、技术方案及实现思路，我可以在现场结合代码进行详细说明。
 
 ---
 
@@ -112,7 +126,8 @@ review_id,author,rating,title,content,version,updated_at
 - [x] 标注样本 / 缓存结果（`data/`）  
 - [x] JSON/CSV 导入  
 - [x] 设计说明（含 AI / DeepSeek 使用方式）  
-- [x] Git 完整提交历史（体现迭代）  
+- [ ] 原始完整 Git 开发历史与早期 vibe coding 证据（未保留；原因见上方透明说明）
+- [x] 发现要求后的真实 Git commit / Pull Request 记录
 
 ---
 
