@@ -4,8 +4,10 @@ End-to-end analysis workflow with stage logging and persistence.
 from __future__ import annotations
 
 import csv
+import hashlib
 import io
 import json
+import re
 from pathlib import Path
 from typing import Any
 
@@ -101,6 +103,7 @@ def _execute(
     use_sample: bool = False,
 ):
     goal = run.analysis_goal or ""
+    offline_demo = bool(use_sample)
 
     # 1) Scope
     _set_progress(run, "scope", 5)
@@ -251,6 +254,8 @@ def _execute(
     _set_progress(run, "classify_analyze", 50)
     analysis = None
     try:
+        if offline_demo:
+            raise LLMError("offline sample mode disables model calls")
         if llm_configured():
             analysis = analyzer.analyze_reviews(scoped, goal, run.app_id)
             # If model returned empty findings, fall back to heuristic on real IDs
@@ -295,11 +300,17 @@ def _execute(
         else:
             raise LLMError("OPENAI_API_KEY missing")
     except Exception as exc:
-        cached_analysis = _try_load_cached_bundle(run.app_id)
+        cached_analysis = _try_load_matching_cached_bundle(
+            run.app_id, data_source
+        )
         if cached_analysis and current_app.config.get("ALLOW_CACHED_FALLBACK"):
             analysis = cached_analysis.get("analysis") or analyzer.heuristic_analyze(
                 scoped, goal
             )
+            source_method = analysis.get("method")
+            if source_method != "cached_model_output_labeled":
+                analysis["source_method"] = source_method
+            analysis["method"] = "cached_model_output_labeled"
             analysis["used_fallback"] = True
             analysis["cache_note"] = (
                 f"Live model failed/unavailable ({exc}); "
@@ -341,18 +352,24 @@ def _execute(
     # 5) PRD
     _set_progress(run, "plan_prd", 70)
     try:
-        if llm_configured() and findings:
+        if not offline_demo and llm_configured() and findings:
             prd = planner.build_prd(
                 findings, goal, run.app_id, cleaned_pack["stats"]
             )
         else:
             raise LLMError("skip live prd")
     except Exception:
-        cached_bundle = _try_load_cached_bundle(run.app_id)
+        cached_bundle = _try_load_matching_cached_bundle(
+            run.app_id, data_source
+        )
         if cached_bundle and cached_bundle.get("prd") and current_app.config.get(
             "ALLOW_CACHED_FALLBACK"
         ):
             prd = cached_bundle["prd"]
+            source_method = prd.get("method")
+            if source_method != "cached_model_output_labeled":
+                prd["source_method"] = source_method
+            prd["method"] = "cached_model_output_labeled"
             prd["cache_note"] = "Labeled cached PRD used due to model unavailability."
         else:
             prd = planner.heuristic_prd(findings, goal, run.app_id)
@@ -373,12 +390,14 @@ def _execute(
     _set_progress(run, "test_cases", 85)
     requirements = prd.get("requirements") or []
     try:
-        if llm_configured() and requirements:
+        if not offline_demo and llm_configured() and requirements:
             tc_pack = testgen.generate_test_cases(requirements, goal)
         else:
             raise LLMError("skip live tc")
     except Exception:
-        cached_bundle = _try_load_cached_bundle(run.app_id)
+        cached_bundle = _try_load_matching_cached_bundle(
+            run.app_id, data_source
+        )
         if cached_bundle and cached_bundle.get("test_cases") and current_app.config.get(
             "ALLOW_CACHED_FALLBACK"
         ):
@@ -578,8 +597,12 @@ def _load_sample_reviews() -> list[dict[str, Any]]:
 
 
 def _try_load_cached_raw(app_id: str) -> list[dict[str, Any]] | None:
-    path = Path(current_app.config["CACHE_DIR"]) / f"{app_id}_reviews.json"
-    if path.exists():
+    cache_dir = Path(current_app.config["CACHE_DIR"])
+    paths = [raw_path for _, raw_path, _ in _real_rss_cache_pairs(app_id)]
+    paths.append(cache_dir / f"{app_id}_reviews.json")
+    for path in paths:
+        if not path.exists():
+            continue
         data = json.loads(path.read_text(encoding="utf-8"))
         reviews = data["reviews"] if isinstance(data, dict) else data
         if reviews:
@@ -591,8 +614,65 @@ def _try_load_cached_raw(app_id: str) -> list[dict[str, Any]] | None:
     return None
 
 
-def _try_load_cached_bundle(app_id: str) -> dict[str, Any] | None:
-    path = Path(current_app.config["CACHE_DIR"]) / f"{app_id}_bundle.json"
-    if not path.exists():
-        return None
-    return json.loads(path.read_text(encoding="utf-8"))
+def _try_load_cached_bundle(
+    app_id: str, prefer_real: bool = False
+) -> dict[str, Any] | None:
+    cache_dir = Path(current_app.config["CACHE_DIR"])
+    paths = []
+    if prefer_real:
+        paths.extend(
+            bundle_path
+            for _, _, bundle_path in _real_rss_cache_pairs(app_id)
+        )
+    paths.append(cache_dir / f"{app_id}_bundle.json")
+    for path in paths:
+        if path.exists():
+            return json.loads(path.read_text(encoding="utf-8"))
+    return None
+
+
+def _try_load_matching_cached_bundle(
+    app_id: str, data_source: str
+) -> dict[str, Any] | None:
+    if data_source == "cached_rss_labeled":
+        return _try_load_cached_bundle(app_id, prefer_real=True)
+    if data_source == "sample_file_labeled":
+        return _try_load_cached_bundle(app_id)
+    return None
+
+
+def _real_rss_cache_pairs(
+    app_id: str,
+) -> list[tuple[int, Path, Path]]:
+    cache_dir = Path(current_app.config["CACHE_DIR"])
+    pattern = re.compile(
+        rf"^{re.escape(app_id)}_reviews_real_rss_run(\d+)\.json$"
+    )
+    pairs: list[tuple[int, Path, Path]] = []
+    for raw_path in cache_dir.glob(f"{app_id}_reviews_real_rss_run*.json"):
+        match = pattern.fullmatch(raw_path.name)
+        if not match:
+            continue
+        run_number = int(match.group(1))
+        bundle_path = cache_dir / (
+            f"{app_id}_bundle_real_rss_run{run_number}.json"
+        )
+        if bundle_path.exists() and _real_cache_pair_is_valid(
+            raw_path, bundle_path
+        ):
+            pairs.append((run_number, raw_path, bundle_path))
+    return sorted(pairs, key=lambda pair: pair[0], reverse=True)
+
+
+def _real_cache_pair_is_valid(raw_path: Path, bundle_path: Path) -> bool:
+    try:
+        bundle = json.loads(bundle_path.read_text(encoding="utf-8"))
+        if bundle.get("source_data_file") != raw_path.name:
+            return False
+        expected_hash = str(bundle.get("source_data_sha256") or "").lower()
+        if not expected_hash:
+            return False
+        actual_hash = hashlib.sha256(raw_path.read_bytes()).hexdigest()
+        return actual_hash == expected_hash
+    except (OSError, ValueError, json.JSONDecodeError):
+        return False
