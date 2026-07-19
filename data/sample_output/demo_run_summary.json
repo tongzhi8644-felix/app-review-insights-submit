@@ -1,0 +1,56 @@
+﻿{
+  "_label": "SAMPLE OUTPUT / LABELED — 示例交付物摘要，供无外网审阅。不替代在线对新输入的分析能力。",
+  "app_id": "839285684",
+  "app_url": "https://apps.apple.com/us/app/workout-for-women-home-gym/id839285684",
+  "analysis_goal": "focus on subscription conversion and low-rating reviews",
+  "data_source_options": [
+    "itunes_rss_us",
+    "import_json_csv",
+    "sample_file_labeled",
+    "cached_rss_labeled"
+  ],
+  "deliverables": {
+    "raw_reviews": "见运行后 Reviews 页 Raw，或 data/sample_reviews.json",
+    "cleaned_reviews": "见运行后 Reviews 页 Cleaned",
+    "classifications": "见 Classification 页",
+    "findings": [
+      {
+        "title": "Aggressive Paywall and Loss of Free Features",
+        "sample_count": 18,
+        "confidence": 0.9,
+        "note": "示例结构；真实跑通时 findings 会引用当次评论的 review_id"
+      },
+      {
+        "title": "Free Trial Billing Issues and Unauthorized Charges",
+        "sample_count": 8,
+        "confidence": 0.9
+      }
+    ],
+    "prd": {
+      "version_plan": ["vNext.1 trust & billing", "vNext.2 workout usability"],
+      "requirements_example": ["REQ-1 billing clarity", "REQ-2 crash on save"]
+    },
+    "test_cases": {
+      "example": ["TC-1 trial-end reminder", "TC-2 save without crash"]
+    },
+    "validation": "reviews → findings → requirements → test cases 可追溯"
+  },
+  "ui_tabs": [
+    "Findings",
+    "PRD",
+    "Test cases",
+    "Classification",
+    "Reviews (Raw + Cleaned)",
+    "Validation",
+    "Raw JSON"
+  ],
+  "ai": {
+    "model_documented": "DeepSeek (deepseek-chat)",
+    "tasks": [
+      "dynamic topic discovery",
+      "evidence-grounded findings",
+      "PRD / version plan",
+      "test case generation"
+    ]
+  }
+}

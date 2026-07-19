@@ -1,0 +1,207 @@
+{
+  "_label": "CACHED / LABELED analysis bundle for app 839285684. For offline interviewer review. Does NOT replace live model analysis when OPENAI_API_KEY and network are available.",
+  "analysis": {
+    "method": "cached_model_output_labeled",
+    "evidence_sufficient": true,
+    "data_limitations": [
+      "Cached bundle based on sample/prior run",
+      "RSS live volume may differ by date"
+    ],
+    "conflicting_themes": [
+      "Some users report easy Apple subscription cancel (sample-1015) while others call billing a trap"
+    ],
+    "classifications": [
+      {"review_id": "sample-1001", "topics": ["subscription_billing", "support"], "sentiment": "negative", "priority_hint": "p0", "note": "billing clarity"},
+      {"review_id": "sample-1002", "topics": ["subscription_billing"], "sentiment": "negative", "priority_hint": "p0", "note": "cancel friction"},
+      {"review_id": "sample-1003", "topics": ["video_streaming", "workout_usability"], "sentiment": "mixed", "priority_hint": "p1", "note": "buffering"},
+      {"review_id": "sample-1004", "topics": ["workout_usability", "timers"], "sentiment": "negative", "priority_hint": "p1", "note": "rest timer"},
+      {"review_id": "sample-1006", "topics": ["stability"], "sentiment": "negative", "priority_hint": "p0", "note": "crash on save"},
+      {"review_id": "sample-1007", "topics": ["account_login"], "sentiment": "negative", "priority_hint": "p0", "note": "login loop"},
+      {"review_id": "sample-1015", "topics": ["subscription_billing"], "sentiment": "positive", "priority_hint": "none", "note": "conflicting easy cancel"}
+    ],
+    "findings": [
+      {
+        "finding_key": "F-billing-clarity",
+        "title": "Subscription trial-to-paid conversion feels opaque",
+        "summary": "Multiple low-rating reviews describe unexpected charges after trial and difficulty locating cancel/manage flows. This conflicts with at least one positive report that Apple subscription management was easy.",
+        "source_review_ids": ["sample-1001", "sample-1002", "sample-1011", "sample-1019", "sample-1020"],
+        "sample_count": 5,
+        "confidence": 0.78,
+        "uncertainty": "No exact funnel metrics; relies on review text. Conflict with sample-1015.",
+        "conflicting_evidence": "sample-1015 reports canceling via Apple was straightforward.",
+        "evidence_excerpts": [
+          {"review_id": "sample-1001", "excerpt": "got charged for a yearly subscription. The cancel flow is buried"},
+          {"review_id": "sample-1011", "excerpt": "Yearly plan renewed without a reminder email from the app"}
+        ],
+        "is_assumption": false
+      },
+      {
+        "finding_key": "F-rest-timer",
+        "title": "Rest timers are not customizable enough for beginners",
+        "summary": "Users ask for adjustable rest intervals; default rests feel too short during circuits.",
+        "source_review_ids": ["sample-1004", "sample-1016"],
+        "sample_count": 2,
+        "confidence": 0.55,
+        "uncertainty": "Only two supporting reviews in sample set — treat cautiously.",
+        "conflicting_evidence": "",
+        "evidence_excerpts": [
+          {"review_id": "sample-1004", "excerpt": "rest timer is too short and I cannot adjust it"}
+        ],
+        "is_assumption": true
+      },
+      {
+        "finding_key": "F-crash-save",
+        "title": "Crash when saving completed workouts",
+        "summary": "Repeated reports of crash on save across network conditions; progress loss.",
+        "source_review_ids": ["sample-1006", "sample-1017"],
+        "sample_count": 2,
+        "confidence": 0.62,
+        "uncertainty": "Small sample; needs crash logs to confirm root cause.",
+        "conflicting_evidence": "",
+        "evidence_excerpts": [
+          {"review_id": "sample-1006", "excerpt": "Crashes every time I finish and tap save"}
+        ],
+        "is_assumption": true
+      },
+      {
+        "finding_key": "F-video-buffer",
+        "title": "Trainer video playback buffers mid-workout",
+        "summary": "Streaming stutter reduces ability to follow along during home workouts.",
+        "source_review_ids": ["sample-1003"],
+        "sample_count": 1,
+        "confidence": 0.4,
+        "uncertainty": "Single review — insufficient for firm product commitment.",
+        "conflicting_evidence": "",
+        "evidence_excerpts": [
+          {"review_id": "sample-1003", "excerpt": "trainer videos stutter on Wi-Fi"}
+        ],
+        "is_assumption": true
+      }
+    ]
+  },
+  "prd": {
+    "method": "cached_model_output_labeled",
+    "version_plan": [
+      {
+        "version": "vNext.1",
+        "theme": "Trust & stability",
+        "goal": "Reduce billing surprise and crash-on-save incidents",
+        "requirement_ids": ["REQ-1", "REQ-2"]
+      },
+      {
+        "version": "vNext.2",
+        "theme": "Workout usability",
+        "goal": "Improve on-session controls and streaming resilience",
+        "requirement_ids": ["REQ-3", "REQ-4"]
+      }
+    ],
+    "requirements": [
+      {
+        "requirement_id": "REQ-1",
+        "title": "Pre-renewal and trial-end billing clarity",
+        "priority": "P0",
+        "user_problem": "Users feel unexpectedly charged after trial / renewal",
+        "description": "Surface trial end date, upcoming renewal, and deep link to Apple subscription management before charge.",
+        "acceptance_criteria": [
+          "In-app banner shows trial end / renewal date at least 48h prior",
+          "One-tap path to Apple manage-subscription sheet",
+          "Paywall copy states price and period without ambiguous annual default"
+        ],
+        "source_finding_keys": ["F-billing-clarity"],
+        "source_review_ids": ["sample-1001", "sample-1002", "sample-1011", "sample-1019"],
+        "out_of_scope": ["Changing Apple billing backend"]
+      },
+      {
+        "requirement_id": "REQ-2",
+        "title": "Fix crash on workout save",
+        "priority": "P0",
+        "user_problem": "App crashes when saving completed workouts",
+        "description": "Stabilize save path; persist draft locally if upload fails; show recovery UI.",
+        "acceptance_criteria": [
+          "Crash-free save rate > 99.5% on target devices",
+          "If save fails, workout draft recoverable after relaunch"
+        ],
+        "source_finding_keys": ["F-crash-save"],
+        "source_review_ids": ["sample-1006", "sample-1017"],
+        "out_of_scope": ["Full offline mode redesign"]
+      },
+      {
+        "requirement_id": "REQ-3",
+        "title": "Custom rest timers",
+        "priority": "P1",
+        "user_problem": "Default rest intervals too short / not adjustable",
+        "description": "Allow per-session and per-exercise rest duration overrides with beginner defaults.",
+        "acceptance_criteria": [
+          "User can set rest between 10-180 seconds",
+          "Preference persists across sessions"
+        ],
+        "source_finding_keys": ["F-rest-timer"],
+        "source_review_ids": ["sample-1004", "sample-1016"],
+        "out_of_scope": ["Auto-adaptive HR-based rests"]
+      },
+      {
+        "requirement_id": "REQ-4",
+        "title": "Adaptive video quality / buffer handling",
+        "priority": "P2",
+        "user_problem": "Video stutters mid-workout",
+        "description": "Add adaptive bitrate and a non-blocking retry when buffer stalls.",
+        "acceptance_criteria": [
+          "On buffer > 2s, auto step-down quality once",
+          "User can continue with form tips overlay if video fails"
+        ],
+        "source_finding_keys": ["F-video-buffer"],
+        "source_review_ids": ["sample-1003"],
+        "out_of_scope": ["Re-filming all content"]
+      }
+    ],
+    "prd_markdown": "# PRD — Workout for Women (id 839285684)\n\n## Background\nGrounded in U.S. App Store review themes (cached labeled sample).\n\n## Goals\nImprove subscription trust and workout-session reliability.\n\n## Requirements\nSee REQ-1 … REQ-4 with source review IDs.\n\n## Version Plan\nvNext.1 trust & stability; vNext.2 usability.\n\n## Risks\nConflicting billing feedback; small samples for timer/video findings.\n"
+  },
+  "test_cases": [
+    {
+      "case_id": "TC-1",
+      "requirement_id": "REQ-1",
+      "title": "Trial-end reminder visible before charge",
+      "steps": [
+        "Create sandbox account entering last 48h of trial",
+        "Open app home and paywall surfaces",
+        "Tap manage subscription CTA"
+      ],
+      "expected_result": "Trial end date shown; Apple manage sheet opens; copy shows price/period clearly",
+      "source_review_ids": ["sample-1001", "sample-1011"]
+    },
+    {
+      "case_id": "TC-2",
+      "requirement_id": "REQ-2",
+      "title": "Save workout does not crash; draft recovers",
+      "steps": [
+        "Complete a workout",
+        "Enable airplane mode and tap save",
+        "Force quit, relaunch, restore draft, save online"
+      ],
+      "expected_result": "No crash; draft restored; final save succeeds",
+      "source_review_ids": ["sample-1006", "sample-1017"]
+    },
+    {
+      "case_id": "TC-3",
+      "requirement_id": "REQ-3",
+      "title": "Custom rest timer persists",
+      "steps": [
+        "Set rest to 60s mid-workout",
+        "Finish and start a new session next day"
+      ],
+      "expected_result": "Default rest remains 60s unless reset",
+      "source_review_ids": ["sample-1004", "sample-1016"]
+    },
+    {
+      "case_id": "TC-4",
+      "requirement_id": "REQ-4",
+      "title": "Buffer triggers quality step-down",
+      "steps": [
+        "Throttle network to poor 3G",
+        "Play trainer video until buffer stall"
+      ],
+      "expected_result": "Quality steps down once; session remains usable",
+      "source_review_ids": ["sample-1003"]
+    }
+  ]
+}

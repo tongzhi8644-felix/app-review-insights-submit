@@ -1,0 +1,11 @@
+review_id,author,rating,title,content,version,updated_at
+sample-1001,FitMom42,2,Charged after trial without clear warning,"I tried the free trial and then got charged for a yearly subscription. The cancel flow is buried and support took days to reply.",9.18.0,2025-11-02T10:00:00Z
+sample-1002,YogaJen,1,Subscription trap,"Hard to cancel the subscription. In-app it keeps pushing annual plans.",9.18.0,2025-11-03T08:12:00Z
+sample-1003,CardioKate,3,Workouts are good but video lag,"Love the home workout plans but the trainer videos stutter on Wi-Fi.",9.17.2,2025-10-21T15:40:00Z
+sample-1004,HomeGymHero,2,Cannot customize rest timers,"Between circuits the rest timer is too short and I cannot adjust it.",9.18.0,2025-11-05T19:01:00Z
+sample-1006,BusyBee,1,App crashes when saving workout,"Crashes every time I finish and tap save. Lost progress twice this week.",9.18.1,2025-11-08T07:45:00Z
+sample-1007,MorningMiles,2,Login loop after update,"After updating I keep getting signed out. Password reset email never arrives.",9.18.1,2025-11-09T09:10:00Z
+sample-1011,RefundRita,1,Unexpected renewal,"Yearly plan renewed without a reminder email from the app.",9.16.0,2025-09-30T10:00:00Z
+sample-1015,ConflictCarl,5,Billing was easy for me,"Canceling subscription via Apple subscriptions was straightforward.",9.18.0,2025-11-03T18:00:00Z
+sample-1019,PaywallPam,2,Cannot try enough free content,"Free tier is too limited to evaluate the subscription.",9.18.0,2025-11-06T17:50:00Z
+sample-1020,StableSteve,3,Mixed feelings on pricing,"Workouts are useful but annual price feels high versus competitors.",9.17.2,2025-10-25T13:13:00Z

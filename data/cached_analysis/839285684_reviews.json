@@ -1,0 +1,186 @@
+{
+  "_label": "CACHED / LABELED raw reviews for app 839285684 (mirror of sample for offline).",
+  "app_id": "839285684",
+  "reviews": [
+    {
+      "review_id": "sample-1001",
+      "author": "FitMom42",
+      "rating": 2,
+      "title": "Charged after trial without clear warning",
+      "content": "I tried the free trial and then got charged for a yearly subscription. The cancel flow is buried and support took days to reply. Please make billing clearer.",
+      "version": "9.18.0",
+      "updated_at": "2025-11-02T10:00:00Z"
+    },
+    {
+      "review_id": "sample-1002",
+      "author": "YogaJen",
+      "rating": 1,
+      "title": "Subscription trap",
+      "content": "Hard to cancel the subscription. Apple subscription page works but in-app it keeps pushing annual plans. Refund requested.",
+      "version": "9.18.0",
+      "updated_at": "2025-11-03T08:12:00Z"
+    },
+    {
+      "review_id": "sample-1003",
+      "author": "CardioKate",
+      "rating": 3,
+      "title": "Workouts are good but video lag",
+      "content": "Love the home workout plans but the trainer videos stutter on Wi-Fi. Following along is frustrating when the stream buffers mid-set.",
+      "version": "9.17.2",
+      "updated_at": "2025-10-21T15:40:00Z"
+    },
+    {
+      "review_id": "sample-1004",
+      "author": "HomeGymHero",
+      "rating": 2,
+      "title": "Can't customize rest timers",
+      "content": "Between circuits the rest timer is too short and I cannot adjust it. For beginners this makes workouts unusable.",
+      "version": "9.18.0",
+      "updated_at": "2025-11-05T19:01:00Z"
+    },
+    {
+      "review_id": "sample-1005",
+      "author": "StrengthSara",
+      "rating": 5,
+      "title": "Great plans",
+      "content": "The guided plans keep me consistent. Would love more dumbbell-only filters though.",
+      "version": "9.18.0",
+      "updated_at": "2025-11-06T11:20:00Z"
+    },
+    {
+      "review_id": "sample-1006",
+      "author": "BusyBee",
+      "rating": 1,
+      "title": "App crashes when saving workout",
+      "content": "Crashes every time I finish and tap save. Lost progress twice this week on iPhone 14.",
+      "version": "9.18.1",
+      "updated_at": "2025-11-08T07:45:00Z"
+    },
+    {
+      "review_id": "sample-1007",
+      "author": "MorningMiles",
+      "rating": 2,
+      "title": "Login loop after update",
+      "content": "After updating I keep getting signed out. Password reset email never arrives.",
+      "version": "9.18.1",
+      "updated_at": "2025-11-09T09:10:00Z"
+    },
+    {
+      "review_id": "sample-1008",
+      "author": "PilatesPat",
+      "rating": 4,
+      "title": "Solid but too many paywalls",
+      "content": "Content quality is high. Still, almost every program is behind subscription which hurts discovery for new users.",
+      "version": "9.17.2",
+      "updated_at": "2025-10-18T12:00:00Z"
+    },
+    {
+      "review_id": "sample-1009",
+      "author": "NewbieNell",
+      "rating": 3,
+      "title": "Modifications unclear",
+      "content": "As a beginner I need clearer exercise modifications. The UI shows advanced moves without easy alternatives.",
+      "version": "9.18.0",
+      "updated_at": "2025-11-01T16:33:00Z"
+    },
+    {
+      "review_id": "sample-1010",
+      "author": "NightOwlFit",
+      "rating": 2,
+      "title": "Notifications spam",
+      "content": "Marketing notifications are constant even after I disabled workout reminders. Settings seem ignored.",
+      "version": "9.18.0",
+      "updated_at": "2025-11-04T21:05:00Z"
+    },
+    {
+      "review_id": "sample-1011",
+      "author": "RefundRita",
+      "rating": 1,
+      "title": "Unexpected renewal",
+      "content": "Yearly plan renewed without a reminder email from the app. I only noticed on my bank statement.",
+      "version": "9.16.0",
+      "updated_at": "2025-09-30T10:00:00Z"
+    },
+    {
+      "review_id": "sample-1012",
+      "author": "StreamSam",
+      "rating": 2,
+      "title": "Offline downloads missing",
+      "content": "Said I could download workouts for gym basement with no signal. Download button does nothing.",
+      "version": "9.18.0",
+      "updated_at": "2025-11-07T14:22:00Z"
+    },
+    {
+      "review_id": "sample-1013",
+      "author": "HappyHaley",
+      "rating": 5,
+      "title": "Finally consistent",
+      "content": "Best home gym app I've used. The women-focused programming feels practical.",
+      "version": "9.18.1",
+      "updated_at": "2025-11-10T08:00:00Z"
+    },
+    {
+      "review_id": "sample-1014",
+      "author": "DuplicateUser",
+      "rating": 2,
+      "title": "Charged after trial without clear warning",
+      "content": "I tried the free trial and then got charged for a yearly subscription. The cancel flow is buried and support took days to reply. Please make billing clearer.",
+      "version": "9.18.0",
+      "updated_at": "2025-11-02T10:05:00Z"
+    },
+    {
+      "review_id": "sample-1015",
+      "author": "ConflictCarl",
+      "rating": 5,
+      "title": "Billing was easy for me",
+      "content": "Canceling subscription via Apple subscriptions was straightforward. Not sure why others struggle.",
+      "version": "9.18.0",
+      "updated_at": "2025-11-03T18:00:00Z"
+    },
+    {
+      "review_id": "sample-1016",
+      "author": "TimerTina",
+      "rating": 3,
+      "title": "Rest timer feedback",
+      "content": "Please let us set custom rest intervals per exercise. Default 20s is too aggressive.",
+      "version": "9.17.0",
+      "updated_at": "2025-10-10T09:00:00Z"
+    },
+    {
+      "review_id": "sample-1017",
+      "author": "CrashChris",
+      "rating": 1,
+      "title": "Crash on save",
+      "content": "Same crash when saving workout history. Happens on cellular and Wi-Fi.",
+      "version": "9.18.1",
+      "updated_at": "2025-11-11T06:40:00Z"
+    },
+    {
+      "review_id": "sample-1018",
+      "author": "FilterFaye",
+      "rating": 4,
+      "title": "Need equipment filters",
+      "content": "Want a filter for no-equipment only. Current filters mix resistance bands into bodyweight plans.",
+      "version": "9.18.0",
+      "updated_at": "2025-11-05T12:12:00Z"
+    },
+    {
+      "review_id": "sample-1019",
+      "author": "PaywallPam",
+      "rating": 2,
+      "title": "Can't try enough free content",
+      "content": "Free tier is too limited to evaluate the subscription. Conversion suffers because trial content is sparse.",
+      "version": "9.18.0",
+      "updated_at": "2025-11-06T17:50:00Z"
+    },
+    {
+      "review_id": "sample-1020",
+      "author": "StableSteve",
+      "rating": 3,
+      "title": "Mixed feelings on pricing",
+      "content": "Workouts are useful but annual price feels high versus competitors. Monthly option is easy to miss.",
+      "version": "9.17.2",
+      "updated_at": "2025-10-25T13:13:00Z"
+    }
+  ]
+}
