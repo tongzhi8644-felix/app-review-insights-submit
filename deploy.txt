@@ -1,0 +1,82 @@
+﻿# =============================================================================
+# deploy.txt — App Review Insights 部署说明
+# =============================================================================
+
+## 1. 环境要求
+- Windows / macOS / Linux
+- Python 3.12.x
+- MySQL Server 8.0.12+（推荐；本地冒烟可用 USE_SQLITE=1）
+- 外网 HTTPS：Apple Reviews RSS + 模型 API（在线分析时）
+
+## 2. 创建 MySQL 数据库
+1) 启动 MySQL 服务
+2) 执行：
+
+   mysql -u root -p < sql/schema.sql
+
+或在客户端：
+
+   SOURCE /绝对路径/project/sql/schema.sql;
+
+应用首次启动也会自动建表（db.create_all）。
+
+## 3. Python 虚拟环境
+在项目根目录：
+
+   python -m venv .venv
+
+Windows PowerShell：
+
+   .\.venv\Scripts\Activate.ps1
+
+安装依赖：
+
+   python -m pip install --upgrade pip
+   pip install -r requirements.txt
+
+## 4. 环境变量
+   copy .env.example .env
+
+编辑 .env（示例）：
+
+   MYSQL_HOST=127.0.0.1
+   MYSQL_PORT=3306
+   MYSQL_USER=root
+   MYSQL_PASSWORD=your_mysql_password
+   MYSQL_DATABASE=app_review_insights
+   AI_ENABLED=1
+   OPENAI_API_KEY=sk-...
+   OPENAI_BASE_URL=https://api.silra.cn/v1
+   OPENAI_MODEL=deepseek-chat
+   OPENAI_TEMPERATURE=0.7
+   OPENAI_MAX_TOKENS=8000
+   ALLOW_CACHED_FALLBACK=1
+   MAX_REVIEW_PAGES=10
+   SECRET_KEY=any-long-random-string
+
+不要提交 .env 或真实 API Key。
+
+无 MySQL 临时冒烟（可选）：
+
+   USE_SQLITE=1
+
+## 5. 启动
+   python run.py
+
+打开：http://127.0.0.1:5000
+健康检查：http://127.0.0.1:5000/api/health
+
+## 6. 离线 / 面试官审阅
+- UI 勾选 Use labeled sample reviews，或上传 data/sample_reviews.json / .csv
+- ALLOW_CACHED_FALLBACK=1 可加载 data/cached_analysis/*（已标注）
+- 缓存不能替代：有网络+模型时应能处理新链接/新数据/新目标
+
+## 7. 数据采集摘要
+主数据源：Apple iTunes Customer Reviews RSS JSON（美国区）
+不使用 apps.apple.com 页面 HTML DOM 爬取。
+局限：最近公开评论、页数上限、页间延时。
+
+## 8. 常见问题
+- 数据库连不上：检查服务、账号、端口、库名
+- 评论为空：改用导入或 sample
+- 模型报错：检查 OPENAI_*；或使用标注缓存审阅
